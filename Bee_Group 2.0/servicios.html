@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Group S.A. - Servicios</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.jpeg" alt="Logo de Bee Group S.A." class="logo">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="https://wa.me/0985701545">WhatsApp</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Servicios de Bee Group S.A.</h1>
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <h3>Préstamos Personales</h3>
+                        <p>Ofrecemos préstamos personales con condiciones flexibles y tasas competitivas, diseñados para ayudar a nuestros clientes a alcanzar sus metas financieras.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Préstamos Empresariales</h3>
+                        <p>Apoyamos a pequeñas y medianas empresas con financiamiento que les permite crecer y expandirse, proporcionando capital de trabajo, financiación para equipos y proyectos.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Asesoría Financiera</h3>
+                        <p>Nuestros expertos ofrecen asesoría financiera personalizada para ayudar a nuestros clientes a tomar decisiones informadas sobre sus finanzas.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Gestión de Inversiones</h3>
+                        <p>Ofrecemos servicios de gestión de inversiones para individuos y empresas, ayudándoles a maximizar sus retornos y alcanzar sus objetivos financieros a largo plazo.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Educación Financiera</h3>
+                        <p>En Bee Group S.A., creemos en la importancia de la educación financiera. Ofrecemos talleres y seminarios para educar a nuestros clientes sobre la gestión de sus finanzas.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </main>
+    <footer>
+        <div class="contact-info-footer">
+            <div class="contact-info-section">
+                <h2>Información de Contacto</h2>
+                <p><strong>Teléfono:</strong> 123-456-7890</p>
+                <p><strong>Celular:</strong> 0985-701-545</p>
+                <p><strong>Correo Electrónico:</strong> serviciosbeegroup@gmail.com</p>
+                <p><strong>Dirección:</strong> Pettirossi 488 e/ Pai Perez y Perú, Asunción, Paraguay</p>
+            </div>
+            <div class="branches-section">
+                <h2>Sucursales</h2>
+                <ul>
+                    <li>Eusebio Ayala</li>
+                    <li>Mercado 4</li>
+                    <li>Luque</li>
+                    <li>Acceso Sur</li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Bee Group S.A. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100 + '%';
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset})`;
+        }
+    </script>
+</body>
+</html>
